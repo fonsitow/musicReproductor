@@ -4,20 +4,40 @@ import Menu from "../components/menu.astro";
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/logo2.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Sound Life</title>
-	</head>
-	<body>
-	
-<Menu/>
-		<slot />
-
-		<footer>	
-
-		</footer>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo2.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Sound Life</title>
+  </head>
+  <body>
+    <div>
+      <header>
+        <nav>
+          <img src="/src/assets/Logo2.png" width="64px" height="64px" />
+          <ul>
+            <li><h1>Sound Life</h1></li>
+            <li>Reproductor</li>
+            <li>Artistas</li>
+            <li>Albumes</li>
+            <li>busqueda</li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        inicio del Reproductor
+        <slot />
+      </main>
+      <footer>footer</footer>
+    </div>
+  </body>
 </html>
+
+<style>
+  div {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+  }
+</style>
