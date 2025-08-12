@@ -1,0 +1,39 @@
+---
+interface Props {
+  titulo: string;
+  descripcion: string;
+}
+const { titulo, descripcion }: Props = Astro.props;
+---
+
+<div class="footer-column">
+  <h3>{titulo}</h3>
+  <p>{descripcion}</p>
+</div>
+
+<style>
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.footer-column h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-column a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+</style>

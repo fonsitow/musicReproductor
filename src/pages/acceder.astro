@@ -1,0 +1,98 @@
+<section class="auth-container">
+  <div class="auth-box">
+    <h2>Bienvenido</h2>
+    <p>Accede a tu cuenta o registrate para empezar</p>
+
+    <form>
+      <input type="email" placeholder="Correo" required class="caja" />
+      <input type="password" placeholder="Pass" required class="caja" />
+      <button type="submit">Iniciar sesion</button>
+      <p class="switch">¿No tienes cuenta? <a href="#">Registrate,</a>
+    <a href="/">volver </a></p>
+    </form>
+  </div>
+</section>
+
+<style>
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #ff0ee3, #4f0369);
+    margin: 0;
+    padding: 0;
+  }
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .auth-box {
+    background: rgba(255, 255, 255, 0.1); /* fondo semi-transparente */
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%); /* para Safari */
+  border-radius: 16px;
+  padding: 2rem;
+  color: white;
+  max-width: 320px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .auth-box h2 {
+    margin-bottom: 10px;
+  }
+
+  .auth-box p {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-bottom: 24px;
+    
+  }
+
+  .auth-box form input {
+    width: 100%;
+    padding: 12px;
+    margin: 6px -10px ;
+    border: none;
+    border-radius: 8px;
+    background: #282828;
+    color: white;
+    font-size: 0.9rem;
+  }
+
+  .auth-box form input:focus {
+    outline: 2px solid #b91db6;
+  }
+
+  .auth-box form button {
+    width: 100%;
+    padding: 12px;
+    background: #951db9;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .auth-box form button:hover {
+    background: #d71ec4;
+  }
+
+  .switch {
+    margin-top: 16px;
+    font-size: 0.85rem;
+  }
+
+  .switch a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .switch a:hover {
+    text-decoration: underline;
+  }
+</style>

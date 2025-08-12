@@ -1,13 +1,84 @@
-<footer>
+---
+import Tarjeta from "./Tarjeta.astro";
+import { Icon } from "astro-icon/components";
+---
 
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <Tarjeta
+          titulo="quienes somos?"
+          descripcion="Soy un joven de 17 años, en busqueda de su sueño de ser programador"
+        />
+        <Tarjeta
+          titulo="Que buscamos?"
+          descripcion="hacer un reproductor de musica web que innove sobre los otros"
+        />
+      </div>
 
-
-
-    © 2025 SongLife c.a
-
+      <ul class="footer-social">
+        <li><a href=""><Icon name="ri:facebook-line" class="icon" /> </a></li>
+        <li><a href=""><Icon name="ri:instagram-line" class="icon" /></a></li>
+        <li><a href=""><Icon name="ri:whatsapp-line" class="icon" /></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">© 2025 SongLife c.a</div>
+  </div>
 </footer>
+
+<style>
+.footer {
+  background-color: #000;
+  color: #cccccca1;
+  padding: 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-info {
+  max-width: 60%;
+}
+
+.footer-info h4 {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.footer-info p {
+  margin-bottom: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-right: 20px;
+}
+
+.footer-social a {
+  color: #ccc;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ff4f81; /* Color acento */
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  font-size: 0.8rem; 
+  color: #b3b3b3;
+}
+.icon{
+  width: 32px;
+  height: 32px;
+}
+</style>

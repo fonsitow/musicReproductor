@@ -3,26 +3,89 @@ import { Icon } from "astro-icon/components";
 ---
 
 <header>
-  <nav>
-    <a href="/">
-    <img
-      src="/src/assets/Logo2.png"
-      width="64px"
-      height="64px"
-      alt="Song Life"
-       />
+  <nav class="navegacion">
+    <div class="logo">
+      <a href="/">
+        <img
+          src="/src/assets/Logo2.png"
+          width="64px"
+          height="64px"
+          alt="Song Life"
+        />
       </a>
-   
-    <a class="lgn"><h1>Song life</h1></a>
-    <ul>
+
+      <a class="lg"><h1>Song life</h1></a>
+    </div>
+    <ul class="lista">
       <li><a href="/reproductor">Reproductor</a></li>
       <li><a href="/generos">Generos</a></li>
-      <li><a href=""><Icon name="iconamoon:search" /> busqueda </a></li>
+      <li><a href=""><Icon name="iconamoon:search" class="search" /></a></li>
       <li>
-        <a href="/acceder"
-          ><button>Acceder <Icon name="iconamoon:neutral-face-light" /></button
-          ></a>
+        <a href="/acceder"><button class="btn-acceder">acceder </button></a>
       </li>
     </ul>
   </nav>
 </header>
+
+<style>
+
+  .lg{
+     background: linear-gradient(90deg, #ff4f81, #4f86ff); /* Degradado */
+  -webkit-background-clip: text; /* Clip al texto */
+  -webkit-text-fill-color: transparent; /* Hace el texto transparente para mostrar el fondo */;
+  }
+  .navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 1rem 2rem;
+    color: rgb(255, 255, 255);
+  }
+  .lista {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: fantasy;
+    transition: all 0.3s ease;
+  }
+  .logo:hover{
+    transform: translateY(-2px);
+  }
+  .btn-acceder {
+    gap: 5px;
+    align-items: center;
+    display: flex;
+    background: linear-gradient(
+      135deg,
+      #69afff,
+      #ff59fc
+    ); /* Degradado elegante */
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px; /* Bordes suaves */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(84, 2, 139, 0.6);
+    transition: all 0.3s ease;
+  }
+  .btn-acceder:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 79, 129, 0.6);
+  }
+  .btn-acceder:active {
+    transform: scale(0.97);
+  }
+
+  .search{
+    width: 24px;
+    height: 24px;
+  }
+  
+</style>
