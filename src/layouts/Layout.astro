@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/footer.astro";
+import Main from "../components/main.astro";
 import Menu from "../components/menu.astro";
 ---
 
@@ -9,30 +11,24 @@ import Menu from "../components/menu.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/logo2.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Sound Life</title>
+    <title>Song Life</title>
   </head>
   <body>
     <div>
       <header>
-        <nav>
-          <img src="/src/assets/Logo2.png" width="64px" height="64px" />
-          <ul>
-            <li><h1>Sound Life</h1></li>
-            <li>Reproductor</li>
-            <li>Artistas</li>
-            <li>Albumes</li>
-            <li>busqueda</li>
-          </ul>
-        </nav>
+        <Menu />
       </header>
       <main>
-        inicio del Reproductor
+        <Main />
         <slot />
       </main>
-      <footer>footer</footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   </body>
 </html>
+
 
 <style>
   div {
