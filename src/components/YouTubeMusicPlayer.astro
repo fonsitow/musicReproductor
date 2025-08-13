@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Neon YouTube Music Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/src/styles/music-player.css" rel="stylesheet" />
+  <!-- Cargamos la API de IFrame de YouTube -->
+  <script defer src="https://www.youtube.com/iframe_api"></script>
+  <!-- Nuestro JS -->
+  <script defer src="/src/scripts/MusicPlayer.js"></script>
+</head>
+<body>
+  <main class="app">
+    <section class="player-card">
+      <header class="now-playing">
+        <img id="cover" class="cover" alt="Portada" />
+        <div class="meta">
+          <h1 id="title">Cargando…</h1>
+          <p id="subtitle">YouTube</p>
+          <div class="visualizer" id="visualizer" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </header>
+
+<!-- Contenedor de lista y formulario -->
+<div id="song-manager">
+  <ul id="song-list"></ul>
+
+      <div id="player" class="yt-frame" aria-label="YouTube player"></div>
+
+      <div class="progress">
+        <span id="currentTime">0:00</span>
+        <input id="seek" type="range" min="0" max="100" value="0" />
+        <span id="totalTime">0:00</span>
+      </div>
+
+      <div class="controls">
+        <button id="prev" class="btn" title="Anterior">⏮</button>
+        <button id="playPause" class="btn primary" title="Reproducir">▶</button>
+        <button id="next" class="btn" title="Siguiente">⏭</button>
+
+        <div class="spacer"></div>
+
+        <button id="shuffle" class="btn" title="Shuffle (S)">🔀</button>
+        <button id="repeat" class="btn" title="Repeat (R)">🔁</button>
+
+        <div class="volume">
+          <button id="mute" class="btn" title="Silenciar">🔊</button>
+          <input id="volume" type="range" min="0" max="100" value="80" />
+        </div>
+      </div>
+    </section>
+
+    <aside class="playlist-card">
+      <div class="search">
+        <input id="search" type="text" placeholder="Buscar canciones…" />
+      </div>
+      <ul id="list" class="list" aria-label="Lista de canciones"></ul>
+    </aside>
+  </main>
+</body>
+</html>
+

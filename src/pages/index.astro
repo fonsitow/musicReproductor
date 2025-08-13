@@ -4,49 +4,56 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="parent">
-    <div class="div1">
-      <Main />
+  <body class="container">
+    <div class="parent">
+      <div class="div1">
+        <Main />
+      </div>
+      <div class="div2">
+        <h3>proposito del reproductor</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, suscipit
+          cum? Excepturi natus id, laborum repudiandae, ipsum officia eveniet
+          doloribus magnam, corporis culpa ratione. Nulla in dolor repellat
+          veniam laudantium! Obcaecati error cum sed libero placeat tempore
+          maiores laborum fugit recusandae. Mollitia veniam ipsum harum in
+          similique pariatur dicta reiciendis ea earum! Soluta temporibus
+          aspernatur mollitia reiciendis quisquam minus labore? Voluptate
+          tempora dolorum quas obcaecati aut amet neque quam maxime quasi
+          placeat debitis, nisi, repellendus quo iusto! Eos quod sunt maiores
+          laborum suscipit culpa tenetur voluptatibus repellat? Porro, id
+          tempora!
+        </p>
+      </div>
+      <div class="div3">
+        <h3>Noticias del mundo de la musica!!!</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
+          blanditiis doloremque nisi, repudiandae sit aspernatur consectetur eum
+          mollitia dolore, minima libero odit fugiat harum necessitatibus! Quae
+          incidunt nam reprehenderit beatae?
+        </p>
+        <ul>
+          <li>Reggaeton</li>
+          <li>pop</li>
+          <li>hip hop</li>
+        </ul>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae ab
+          obcaecati. Unde blanditiis natus animi tenetur tempora qui
+          necessitatibus officia numquam ipsam provident, obcaecati quam
+          perferendis! Magni, modi accusantium.
+        </p>
+      </div>
     </div>
-    <div class="div2">
-      <h3>proposito del reproductor</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, suscipit
-        cum? Excepturi natus id, laborum repudiandae, ipsum officia eveniet
-        doloribus magnam, corporis culpa ratione. Nulla in dolor repellat veniam
-        laudantium! Obcaecati error cum sed libero placeat tempore maiores
-        laborum fugit recusandae. Mollitia veniam ipsum harum in similique
-        pariatur dicta reiciendis ea earum! Soluta temporibus aspernatur
-        mollitia reiciendis quisquam minus labore? Voluptate tempora dolorum
-        quas obcaecati aut amet neque quam maxime quasi placeat debitis, nisi,
-        repellendus quo iusto! Eos quod sunt maiores laborum suscipit culpa
-        tenetur voluptatibus repellat? Porro, id tempora!
-      </p>
-    </div>
-    <div class="div3">
-      <h3>Noticias del mundo de la musica!!!</h3>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
-        blanditiis doloremque nisi, repudiandae sit aspernatur consectetur eum
-        mollitia dolore, minima libero odit fugiat harum necessitatibus! Quae
-        incidunt nam reprehenderit beatae?
-      </p>
-      <ul>
-        <li>Reggaeton</li>
-        <li>pop</li>
-        <li>hip hop</li>
-      </ul>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quae ab
-        obcaecati. Unde blanditiis natus animi tenetur tempora qui
-        necessitatibus officia numquam ipsam provident, obcaecati quam
-        perferendis! Magni, modi accusantium.
-      </p>
-    </div>
-  </div>
+  </body>
 </Layout>
 
 <style>
+
+  body{
+    background: ;
+  }
   .parent {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -57,6 +64,10 @@ import Layout from "../layouts/Layout.astro";
 
   .div1 {
     grid-area: 1 / 1 / 3 / 6;
+    border: 0.2px;
+    border-style: solid;
+    color: purple;
+    background: #f476ff4c;
   }
   .div2 {
     grid-area: 3 / 1 / 6 / 4;
