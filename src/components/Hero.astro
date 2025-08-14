@@ -1,9 +1,9 @@
 <div class="content_main">
   <main>
     <div class="div1">
-      <h1>Reproductor Song Life</h1>
+      <h1 class="fade-in">Reproductor Song Life</h1>
     </div>
-    <p>
+    <p class="slide-up">
       Tu reproductor personal, utilizado por el 0% de la poblacion, aprovecha y
       agrega canciones para que tus amigos y tu tengan su propia lista de
       canciones.
@@ -12,6 +12,36 @@
 </div>
 
 <style>
+
+  .fade-in {
+  font-size: 3rem;
+  animation: fadeIn 2s ease forwards;
+}
+
+.fade-in span {
+  color: #a76fff;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* PÁRRAFO ANIMADO */
+.slide-up {
+  font-size: 1.3rem;
+  margin: 10px 0 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
   .div1 {
     display: flex;
     justify-content: center;
@@ -28,7 +58,7 @@
     background: rgba(255, 255, 255, 0.1); /* fondo semi-transparente */
     backdrop-filter: blur(10px) saturate(120%);
     -webkit-backdrop-filter: blur(10px) saturate(120%); /* para Safari */
-    padding: 18%;
+    padding: 17.5%;
     transition: all 0.5s ease-in-out;
   }
   p {
