@@ -1,18 +1,26 @@
 ---
 import Musica from "../components/MUSICA/Musica.tsx";
 import Layout from "../layouts/Layout.astro";
+import Music from "../components/MUSICA/Musica.tsx";
+import Axios from "axios";
+import { type ISong } from "../components/types/songs.ts";
+import Currentsong from '../components/Currentsong.tsx';
+
+const Playlist = await Axios.get("https://api.institutoalfa.org/api/songs");
+console.log(Playlist.data.songs);
 ---
 
 <Layout>
   <head>
-    <h1 >Music player</h1>
+    <h1>Music player</h1>
     <h2>Lista de reproduccion</h2>
-   
-<Musica title="Reina" list="Roa" client:visible/>
-<Musica title="Reina" list="Roa" client:visible/>
-<Musica title="Reina" list="Roa" client:visible/>
-<Musica title="Reina" list="Roa" client:visible/>
-<Musica title="Reina" list="Roa" client:visible/>
-
+    <div>
+      {
+        Playlist.data.songs.map(function (song: ISong) {
+          return <Music song={song} client:visible />;
+        })
+      }
+    </div>
+    <Currentsong client:visible />
   </head>
 </Layout>
