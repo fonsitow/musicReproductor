@@ -4,23 +4,75 @@ import Layout from "../layouts/Layout.astro";
 import Music from "../components/MUSICA/Musica.tsx";
 import Axios from "axios";
 import { type ISong } from "../components/types/songs.ts";
-import Currentsong from '../components/Currentsong.tsx';
+import Currentsong from "../components/Currentsong.tsx";
 
 const Playlist = await Axios.get("https://api.institutoalfa.org/api/songs");
 console.log(Playlist.data.songs);
 ---
-
+<canvas id="bgParticles" aria-hidden="true"></canvas>
 <Layout>
-  <head>
-    <h1>Music player</h1>
-    <h2>Lista de reproduccion</h2>
-    <div>
-      {
-        Playlist.data.songs.map(function (song: ISong) {
-          return <Music song={song} client:visible />;
-        })
-      }
-    </div>
-    <Currentsong client:visible />
-  </head>
+  
+
+  <body>
+    <head>
+      <div class="page-content">
+      <h1>Music player</h1>
+      <h2>Lista de reproduccion</h2>
+      <div class="music-list">
+        {
+          Playlist.data.songs.map(function (song: ISong) {
+            return <Music song={song} client:visible />;
+          })
+        }
+      </div>
+      </div>
+      <script src="/src/scripts/particulas-bg.js" defer></script>
+      <Currentsong client:visible />
+    </head>
+  </body>
 </Layout>
+
+<style>
+
+   /* Fondo de partículas a pantalla completa */
+#bgParticles {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;         /* detrás del contenido */
+  pointer-events: none; /* que no bloquee clics */
+}
+
+/* Asegura que tu contenido esté encima */
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Respeto a usuarios con “reducir movimiento” */
+@media (prefers-reduced-motion: reduce) {
+  #bgParticles { display: none; }
+}
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 32px;
+    font-family: fantasy;
+  }
+  h2 {
+    text-align: center;
+    font-size: 16px;
+    font-family: fantasy;
+    color: rgba(0, 0, 0, 0.489);
+  }
+  .music-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+ 
+</style>

@@ -22,10 +22,9 @@ function Music ({song }: props) {
     }
 
 return (
-<div style={{
-  alignItems: "center",
-  justifyContent: "center"
-}}>
+<div className="bg-white/10 backdrop-blur-lg border border-white/20 
+             rounded-2xl p-6 text-center text-lg 
+             shadow-lg transition transform hover:scale-105 hover:shadow-purple-400/30">
 
   <div>
     <h3 className="font-semibold ">{song.title}
@@ -34,7 +33,7 @@ return (
       <p>{song.author}</p>
   </div>
   <button 
-  className="bg-black text-white px-8 cursor-pointer gap-1" 
+  className="bg-black text-white px-8 cursor-pointer gap-1 border rounded-lg hover:bg-gray-800 transition-colors duration-300" 
   onClick={handlerClickPlay}>
   {
     play ?
