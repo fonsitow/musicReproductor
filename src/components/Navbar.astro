@@ -1,0 +1,168 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header>
+  <nav class="navegacion">
+    <div class="logo">
+      <a href="/" class="flex items-center gap-2 ">
+        <img
+          src="/src/assets/Logo2.png"
+          width="64px"
+          height="64px"
+          alt="Song Life"
+        />
+        <h1 class="lg">Song life</h1>
+      </a>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="/reproductor">Reproductor</a></li>
+      <li><a href="/OldReproductor">OldReproductor</a></li>
+      <li><a href="/generos">Artistas</a></li>
+      <li>
+        <a href="/acceder"><button class="btn-acceder">acceder </button></a>
+      </li>
+    </ul>
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Abrir menú de navegación"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
+</header>
+
+<script src="/src/scripts/barra.js"></script>
+
+<style>
+  .lg {
+    background: linear-gradient(90deg, #4fc1ff, #ff4fd6); /* Degradado */
+    -webkit-background-clip: text; /* Clip al texto */
+    -webkit-text-fill-color: transparent; /* Hace el texto transparente para mostrar el fondo */
+  }
+  .navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 1rem 2rem;
+    color: rgb(255, 255, 255);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-family: fantasy;
+    transition: all 0.3s ease;
+  }
+  .logo:hover {
+    transform: translateY(-2px);
+  }
+  .btn-acceder {
+    gap: 5px;
+    align-items: center;
+    display: flex;
+    background: linear-gradient(
+      135deg,
+      #7ccdff,
+      #ff59fc
+    ); /* Degradado elegante */
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px; /* Bordes suaves */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(84, 2, 139, 0.6);
+    transition: all 0.3s ease;
+  }
+  .btn-acceder:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 79, 129, 0.6);
+  }
+  .btn-acceder:active {
+    transform: scale(0.97);
+  }
+
+  .navbar-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+
+}
+
+.navbar-links a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #4299e1;
+}
+
+
+  /* Estilos para el menú responsive (botón de hamburguesa) */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .menu-toggle .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #e2e8f0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  /* Animación del botón de hamburguesa */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  /* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    padding: 10px 20px;
+    gap: 32px;
+    text-align: center;
+    z-index: 10;
+  }
+
+   .navbar-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+</style>
